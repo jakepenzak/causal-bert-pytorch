@@ -255,7 +255,7 @@ class CausalBertWrapper:
             Q0 = Q_probs[:, 0]
             Q1 = Q_probs[:, 1]
 
-        return np.mean(Q0 - Q1)
+        return np.mean(Q1 - Q0)
 
     def build_dataloader(self, texts, confounds, treatments=None, outcomes=None,
         tokenizer=None, sampler='random'):
